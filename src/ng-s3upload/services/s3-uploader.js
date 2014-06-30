@@ -35,6 +35,9 @@ angular.module('ngS3upload.services', []).
       fd.append('AWSAccessKeyId', accessKey);
       fd.append('policy', policy);
       fd.append('signature', signature);
+
+      scope.$emit('s3upload:form-data', fd);
+
       fd.append("file", file);
 
       var xhr = new XMLHttpRequest();
